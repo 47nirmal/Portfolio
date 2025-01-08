@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="--i: 1">Port<span>folio</span></a>
+            <ul>
+                <li><a href="index.html" style="--i: 2">Home</a></li>
+                <li><a href="about.html" style="--i: 3">About</a></li>
+                <li><a href="skills.html" style="--i: 4">Skills</a></li>
+                <li><a href="project.html" style="--i: 5">Project</a></li>
+                <li><a href="certificate.html" style="--i: 6">Certificate</a></li>
+                <li><a href="contact.html" class="active" style="--i: 7">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact" class="hero-container">
+        <div class="hero-content hero-content-animation">
+            <h1 style="--i: 1">Contact Me</h1>
+            <p style="--i: 2">Feel free to reach out to me for collaborations or any questions!</p>
+            <form action="#" id="contactForm" method="POST" class="contact-form" style="--i: 3">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <script>
+              // Initialize EmailJS
+              emailjs.init("MEIhhVK4MOWeu8OcA");
+            
+              // Add event listener to the form
+              document.getElementById('contactForm').addEventListener('submit', function(event) {
+                  event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+                  // Send form data via EmailJS
+                  emailjs.sendForm('service_0y0gg9b', 'template_wrx7qxh', this)
+                      .then(function(response) {
+                          alert('Message sent successfully!');
+                      }, function(error) {
+                          alert('Failed to send message: ' + error.text);
+                      });
+              });
+            </script>
+        </div>
+    <div class="location">
+        <h3>Location</h3>
+        <p>Kamatchipuram,Palaviduthi.</p>
+        <p>Karur, India.</p>
+        <p>Postal Code: 621 311</p>
+        <!-- Google Maps embedded iframe -->
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d490.11254795258526!2d78.25019295050487!3d10.66483989252046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa137d7b83f511%3A0x86a9a929383dd729!2sNIRMAL%20HOME!5e0!3m2!1sen!2sin!4v1735891914399!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project Details</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Port<span>folio</span></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="project.html" class="active">Projects</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="project-details">
+        <div class="container">
+            <h1>Project 2: E-Commerce Platform</h1>
+            <p><strong>Description:</strong> This is a comprehensive e-commerce platform that enables users to shop online for a variety of products, featuring secure payment options and user-friendly navigation.</p>
+            <p><strong>Languages & Technologies:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
+           
+        </div>
+        <div class="carousel">
+            <div class="carousel-container">
+                <!-- Slideshow images with captions -->
+                <div class="carousel-images">
+                    <div class="mySlides-fade">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="\image\p1.png" alt="Slide 1">
+                        <div class="text">Caption Text</div>
+                    </div>
+        
+                    <div class="mySlides-fade">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="\image\p2.png" alt="Slide 2">
+                        <div class="text">Caption Two</div>
+                    </div>
+        
+                    <div class="mySlides-fade">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="\image\p3.png" alt="Slide 3">
+                        <div class="text">Caption Three</div>
+                    </div>
+                    <div class="mySlides-fade">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="\image\pa.png" alt="Slide 4">
+                        <div class="text">Caption Four</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="carousel-controls">
+                <button class="carousel-button" onclick="plusSlides(-1)">❮</button>
+                <button class="carousel-button" onclick="plusSlides(1)">❯</button>
+            </div>
+        
+            <div class="view-source">
+                <a href="https://github.com/yourusername/nature-portfolio" target="_blank" class="btn">View Source Code</a>
+            </div>
+        </div>
+          
+        <script>
+           let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides-fade");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slides[slideIndex - 1].style.display = "block";  
+            }
+
+        </script>
+    </section>
+
+    <script>
+        // JavaScript for Carousel Functionality
+        const carouselImages = document.querySelector('.carousel-images');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentIndex = 0;
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                carouselImages.style.transform = `translateX(-${currentIndex * 800}px)`;
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < carouselImages.children.length - 1) {
+                currentIndex++;
+                carouselImages.style.transform = `translateX(-${currentIndex * 800}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

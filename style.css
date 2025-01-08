@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --dark-clr:#081d2c;
+    --second-dark-clr: #112e42; 
+    --text-clr:#f1f5f9;
+    --light-text-clr:#c9d9e8;
+    --global-clr:#0fbbff;
+    --btn-clr:#ff499e;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+html{
+    overflow-x: hidden;
+    line-height:calc(1em + 0.5rem);
+}
+body{
+    font-family: "Jost", serif;
+    background:var(--dark-clr) ;
+    color: var(--text-clr);
+    line-height: 1.3;
+}
+header{
+    width: 100%;
+    background: transparent;
+    z-index: 1000;
+    padding: 1.5rem 0 ;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 10%;
+
+}
+.logo{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-clr);
+}
+.logo span{
+    color: var(--global-clr);
+}
+.navbar ul{
+    display:flex;
+    gap: 1rem;
+    list-style: none;
+    position: relative;
+} 
+header.navbar ul li{
+    position: relative;
+    margin-right: 20px;
+
+}
+.navbar ul li a{
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: 20px;
+    color:var(--text-clr) ;
+}
+.navbar ul li a:hover, .navbar ul li a.active{
+ color: var(--global-clr);
+
+}
+header .navbar ul li a::after{
+    content: '';
+    position: absolute;
+    background: var(--global-clr);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -2px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+header .navbar ul li a:hover::after,header .navbar ul li a.active::after
+{
+    width: 100%;
+}
+.cvbtn{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background:var(--btn-clr) ;
+    color: var(--text-clr);
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--btn-clr);
+    cursor:pointer ;
+    transition: .5s;
+}
+.cvbtn:hover{
+      box-shadow: 0 0 5px var(--btn-clr)
+                  0 0 10px var(--btn-clr)
+                  0 0 15px var(--btn-clr);     
+}
+section{
+    padding: 2% 10%;
+}
+.hero-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 10%;
+}
+.hero-image img{
+    height: 600px;
+    width: 600px;
+    min-width: 600px;
+    filter: drop-shadow(0 0 60px var(--global-clr));
+}
+.hero-content{
+    max-width: 50%;
+}
+.hero-content h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.hero-content h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.hero-content h2{
+font-size: 2rem;
+font-weight: 600;
+}
+.hero-content h2 span{
+    color: var(--global-clr);
+}
+.hero-content p{
+    font-size: 1.2 rem;
+    margin: 2rem 0;
+}
+.social-icons{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.social-icons a{
+    display: inline-flex;
+    font-size: 2rem;
+    background: transparent;
+    color: var(--global-clr);
+    transition: .5s;
+}
+.social-icons a:hover{
+    transform: translateY(-10px);
+}
+.hero-btn{
+
+    display: inline-flex;
+    gap: 1.5rem;
+}
+.hero-btn .btn{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 100%;
+    font-size: 1.3rem;
+    font-weight:600 ;
+    padding: 0.6rem 0;
+    color:var(--dark-clr);
+    background: var(--global-clr);
+    border: 2px solid var(--global-clr);
+    border-radius: 5px;
+    cursor: pointer;
+    overflow:hidden ;
+    z-index: 1;
+}
+.btn:hover{
+    color: var(--global-clr);
+}
+.hero-btn .btn:nth-child(2) {
+    background: transparent;
+    color: var(--global-clr);
+}
+.hero-btn .btn:nth-child(2)::before{
+    background: var(--global-clr);
+}
+.hero-btn .btn:nth-child(2):hover{
+    color: var(--dark-clr);
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--dark-clr);
+    transition: .5s;
+    z-index: -1;
+}
+.btn:hover::before{
+    width: 100%;
+}
+.stats{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.stats .stat{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 200px;
+}
+.stats .stat:not(:last-child){
+    border-right: 1px solid var(--light-text-clr);
+    padding-right:5% ;
+}
+
+.stats .stat h2{
+    font-size: 3.5rem;
+    font-weight: 600;
+
+}
+.stats .stat span{
+    display: inline-block;
+    color: var(--light-text-clr);
+    font-size: 1.1rem;
+}
+/* Additional styles for contact form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--second-dark-clr);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-text-clr);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            font-size: 1rem;
+            padding: 0.8rem;
+            border-radius: 5px;
+            background: var(--dark-clr);
+            color: var(--text-clr);
+            border: 1px solid var(--light-text-clr);
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--global-clr);
+            outline: none;
+        }
+
+        .contact-form button {
+            align-self: flex-end;
+            background: var(--btn-clr);
+            color: var(--text-clr);
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff347a;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        .contact-form {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+
+        .location {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 600px; /* Same as the contact form */
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--second-dark-clr); /* Matching background color */
+            border-radius: 8px; /* Same border-radius as the form */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Same box shadow */
+            text-align: center;
+            margin-left: 15%;
+        }
+        
+        .location h3 {
+            font-size: 1.5rem; /* Adjust font size */
+            color: var(--light-text-clr); /* Matching label color */
+            margin-bottom: 1rem;
+        }
+        
+        .location p {
+            font-size: 1.2rem; /* Adjust font size */
+            color: var(--light-text-clr); /* Matching label color */
+            margin-bottom: 0.5rem;
+        }
+        
+        .map-container {
+            border-radius: 8px; /* Matching border-radius */
+            overflow: hidden; /* Ensures the map stays within the rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adds subtle shadow to the map */
+            margin-top: 4rem;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 300px; /* Adjust the map height */
+            border: 0;
+            border-radius: 8px; /* Same border-radius as the container */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+        
+        iframe:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        .location  {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+        
+
+        /* Certificate css */
+        .certificates-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .certificates-container h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--global-clr);
+            margin-bottom: 2rem;
+        }
+
+        .certificates-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .certificate-card {
+            flex: 1 1 calc(45% - 1rem);
+            background: var(--second-dark-clr);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-card p {
+            color: var(--light-text-clr);
+        }
+        /* Project css */
+         /* Additional styles for project section */
+         .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .projects-container h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--global-clr);
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .project-card {
+            flex: 1 1 calc(30% - 1rem);
+            background: var(--second-dark-clr);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--light-text-clr);
+            margin-bottom: 1rem;
+        }
+
+        .project-content a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--btn-clr);
+            color: var(--text-clr);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-content a:hover {
+            background-color: #ff347a;
+        }
+        .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+        /* Skill css */
+         /* Custom styles for skills section */
+         .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--second-dark-clr);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .skills-container h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--global-clr);
+            text-align: center;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            flex: 1 1 calc(45% - 1rem);
+            background: var(--dark-clr);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--global-clr);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .skill-card p {
+            color: var(--light-text-clr);
+        }
+
+
+        /* Carousel Styles */
+        /* Carousel Styles */
+        /* Carousel Styles */
+        /* Carousel Styles */
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem auto;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .carousel-container {
+            width: auto;
+            height: auto; /* Adjust height as needed */
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 800px;          /* Fills the container width */
+            height: 300px;         /* Fills the container height */
+            border-radius: 10px;  /* Maintains the rounded corners of the container */
+        }
+        .carousel-controls {
+            margin-top: 1rem;
+        }
+
+        .carousel-button {
+            background-color: var(--btn-clr);
+            color: var(--text-clr);
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: #ff347a;
+        }
+
+        .view-source {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .view-source .btn {
+            background-color: var(--global-clr);
+            color: var(--text-clr);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-source .btn:hover {
+            background-color: #218838;
+        }
+
+
+
+        /* Slideshow Styles */
+        .mySlides-fade {
+            display: none;
+            position: relative;
+        }
+
+        .numbertext {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            font-size: 12px;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .text {
+            color: white;
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 16px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            font-size: 20px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #717171;
+        }
